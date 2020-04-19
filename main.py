@@ -2,14 +2,12 @@ import torch
 import pickle
 import torch.nn as nn
 import torch.optim as optim
+from load_data import load_data
 from facegen_dcgan.utility import plot
 from time import time, gmtime, strftime
-from facegen_dcgan.utility import create_gif
-from facegen_dcgan.load_data import load_data
-from facegen_dcgan.utility import save_results
-from facegen_dcgan.utility import save_checkpoint
-from facegen_dcgan.train import train_gen, train_disc
-from facegen_dcgan.model import Generator, Discriminator
+from train import train_gen, train_disc
+from model import Generator, Discriminator
+from utility import create_gif, save_results, save_checkpoint
 
 
 def train_gan(gen, disc, gen_opt, disc_opt, criterion, device, epoch, train_loader):
